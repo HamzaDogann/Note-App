@@ -1,0 +1,1438 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    /* Çubuk genişliği */
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(35deg, rgb(24, 24, 24), rgba(86, 86, 86, 0.951));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: lightgray;
+    /* Çubuk yolu arkaplan rengi */
+}
+
+body {
+    height: 100vh;
+    /* background: rgb(255, 255, 255); */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+
+
+#appname {
+    position: relative;
+    bottom: 10%;
+    text-align: center;
+    transition: all 0.4s ease;
+    opacity: 1;
+    top: -30%;
+
+
+
+
+}
+
+#appname p {
+    font-size: 90px;
+
+    background: linear-gradient(to right, rgb(2, 116, 224), rgb(236, 114, 0));
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+#appname h4 {
+    font-size: 20px;
+
+    background: linear-gradient(to right, rgb(31, 31, 31), rgb(58, 58, 58));
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+#links {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+#links a {
+
+    color: rgb(60, 60, 60);
+}
+
+
+
+
+
+.section {
+
+    width: 670px;
+    height: 0px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    transition: 0.5s all ease-in;
+
+
+
+}
+
+#hr1 {
+    width: 100%;
+    height: 4px;
+    border: 3px solid rgba(188, 188, 188, 0.927);
+    display: none;
+    opacity: 0;
+    transition: 0.6s opacity ease-out;
+}
+
+/* Menü */
+
+.menu {
+    border-radius: 12px 12px 0 0;
+
+    width: 100%;
+    height: 150px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+
+
+}
+
+
+.btnstyle {
+    font-size: 20px;
+    border: 0px;
+    border-radius: 30px;
+    padding: 9px 18px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    transition: 0.5s all ease-out;
+    cursor: pointer;
+
+}
+
+#iconadd {
+    padding-right: 10px;
+    font-size: 30px;
+}
+
+#iconlist {
+    padding-right: 6px;
+    font-size: 30px;
+}
+
+#icondelete {
+    padding-right: 6px;
+    font-size: 30px;
+}
+
+#addbutton {
+    background-image: linear-gradient(60deg, rgb(55, 173, 79), rgba(61, 202, 61, 0.884));
+    display: none;
+    opacity: 0;
+    transition: 0.2s all ease;
+
+}
+
+#showlistbutton {
+
+    background-image: linear-gradient(60deg, rgb(55, 134, 173), rgba(61, 155, 202, 0.884));
+    width: 260px;
+    display: flex;
+    justify-content: center;
+}
+
+#clearbutton {
+    background-image: linear-gradient(60deg, rgb(173, 55, 55), rgba(202, 61, 61, 0.884));
+    display: none;
+    opacity: 0;
+    transition: 0.2s all ease;
+}
+
+#addbutton:hover {
+    background-image: linear-gradient(20deg, rgb(3, 229, 124), rgb(5, 217, 125));
+    color: rgba(29, 29, 29, 0.934);
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+#showlistbutton:hover {
+    background-image: linear-gradient(20deg, rgb(36, 157, 218), rgba(19, 155, 223, 0.884));
+    color: rgba(29, 29, 29, 0.934);
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.1);
+}
+
+#clearbutton:hover {
+    background-image: linear-gradient(20deg, rgb(217, 69, 69), rgba(242, 49, 49, 0.884));
+    color: rgba(29, 29, 29, 0.934);
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Note List */
+
+
+.menulist {
+    width: 100%;
+    height: 0px;
+    overflow: auto;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.6s opacity ease-out;
+    background-image: none;
+    background-size: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+
+}
+
+.note {
+    width: 90%;
+    height: 100px;
+    border-left: 10px solid rgba(7, 111, 207, 0.912);
+    border-right: 2px solid rgba(39, 39, 39, 0.721);
+    border-top: 2px solid rgba(39, 39, 39, 0.721);
+    border-bottom: 2px solid rgba(39, 39, 39, 0.721);
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    margin-left: 5%;
+    margin-top: 20px;
+    border-radius: 7px;
+    transition: 0.3s all ease;
+}
+
+
+.note:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 21px 3px rgba(0, 0, 0, 0.474);
+    transform: translateY(-6px);
+
+
+}
+
+
+.item1 {
+
+    border-right: 1px solid black;
+    display: flex;
+    margin-left: 3px;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+
+
+}
+
+
+.contenttittle {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+
+.item2 {
+
+    font-weight: bold;
+    color: #303030;
+}
+
+.item3 {
+
+    display: flex;
+    align-items: center;
+}
+
+
+.noteicons {
+
+    height: 30%;
+    width: 100%;
+
+    justify-content: center;
+    display: flex;
+    padding: 0 10px;
+
+}
+
+.notebtns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 8px;
+    border: 0;
+    background-color: #e7e7e7d4;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-left: 5px;
+    transition: 0.3s all ease-in-out;
+}
+
+#noteupdate-icon {
+    font-size: 30px;
+    color: rgba(241, 145, 0, 0.966);
+    margin-right: 7px;
+}
+
+#notedelete-icon {
+    font-size: 30px;
+    color: rgb(255, 0, 0);
+    margin-right: 7px;
+}
+
+.notebtns:hover {
+    background-color: #212121e1;
+}
+
+
+.notetittlecontent {
+    text-align: center;
+}
+
+#notetittle {
+    padding-left: 10px;
+    overflow: hidden;
+
+}
+
+
+
+
+
+
+
+
+/* YENİ NOT EKLEME PANELİ */
+
+
+.newnotepannel {
+    width: 600px;
+    height: 620px;
+    background-color: rgb(56, 56, 56);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 3px rgba(175, 175, 175, 0.673);
+    display: none;
+    animation: buyumeAnimasyonu 0.5s ease-out;
+    background-color: #ffffff;
+
+
+}
+
+@keyframes buyumeAnimasyonu {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.bar {
+    width: 100%;
+    height: 150px;
+    border-bottom: 7px solid rgb(255, 113, 18);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px 9px 0px 0;
+    background-image: linear-gradient(225deg, #2282d0 0%, #286fbc 50%, #07329e 100%);
+
+
+}
+
+
+#enterTittle {
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #363636;
+    font-size: 22px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(162, 162, 162, 0.884);
+}
+
+#enterTittle:focus {
+    outline: none;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(36, 36, 36, 0.899);
+}
+
+
+/* İçerik ekleme */
+
+.contentbar {
+    width: 100%;
+    height: 320px;
+    background: transparent;
+
+    display: grid;
+    justify-content: center;
+    margin-top: 0px;
+    position: relative;
+
+
+}
+
+.custom-textarea {
+    width: 500px;
+    height: 100%;
+    resize: none;
+    font-size: 18px;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    color: #363636;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(162, 162, 162, 0.884);
+    border-radius: 4px;
+    background-color: #f5f5f5;
+
+
+
+}
+
+.custom-textarea:focus {
+    border: 2px solid rgba(3, 88, 174, 0.899);
+    outline: none;
+}
+
+/* ADD - CANCEL BUTONLAR */
+
+.newNote-buttonpannel {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+
+
+}
+
+.btnProperties {
+    font-size: 30px;
+    width: 230px;
+    border: 0;
+    border-radius: 30px;
+    height: 60px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.4s all ease;
+    margin-bottom: 10px;
+}
+
+#btnNoteAdd {
+    background-image: linear-gradient(60deg, rgb(6, 150, 189), rgb(22, 87, 166));
+}
+
+#btnCancel {
+    background-image: linear-gradient(60deg, rgb(208, 28, 28), rgb(234, 81, 81));
+}
+
+#btnCancel:hover {
+    background-image: linear-gradient(60deg, rgb(123, 19, 19), rgb(163, 33, 33));
+}
+
+#btnNoteAdd:hover {
+    background-image: linear-gradient(60deg, rgb(2, 117, 149), rgb(0, 62, 138));
+
+}
+
+
+
+/* INFO ALERT 1 */
+
+
+#infodiv1 {
+    width: 600px;
+    height: 150px;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0px 0px 28px 3px rgba(66, 66, 66, 0.673);
+    display: none;
+    position: absolute;
+    animation: buyumeAnimasyonu 0.5s ease-out;
+    z-index: 999;
+
+}
+
+.infobtns1 {
+    justify-content: space-around;
+    display: flex;
+}
+
+#infoalert1 {
+    font-size: 20px;
+    color: #1d1d1dda;
+    font-weight: normal;
+
+}
+
+.infobtn1 {
+    border: 0;
+    font-size: 25px;
+    border-radius: 40px;
+    height: 50px;
+    text-align: center;
+    width: 160px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+#btnYes {
+    background: rgba(66, 173, 66, 0.932);
+
+}
+
+#btnYes:hover {
+    background: rgb(13, 111, 13);
+    box-shadow: 0px 0px 30px 3px rgba(175, 175, 175, 0.673);
+}
+
+#btnNo {
+    background: rgba(209, 25, 12, 0.932);
+
+}
+
+#btnNo:hover {
+    background: rgba(173, 14, 3, 0.992);
+    box-shadow: 0px 0px 30px 3px rgba(175, 175, 175, 0.673);
+}
+
+
+
+/* İNFO DİV 2 */
+
+#infodiv2 {
+    width: 600px;
+    height: 150px;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 4px 3px rgba(102, 102, 102, 0.629);
+    animation: buyumeAnimasyonu 0.3s ease-out;
+    background: #fff;
+}
+
+.infobtns2 {
+    justify-content: space-between;
+    display: flex;
+}
+
+#infoalert2 {
+    font-size: 20px;
+    color: #1d1d1dda;
+}
+
+.infobtn2 {
+    border: 0;
+    font-size: 22px;
+    border-radius: 40px;
+    height: 50px;
+    text-align: center;
+    width: 160px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+#btnAccept {
+    background: rgba(66, 173, 66, 0.932);
+
+}
+
+#btnAccept:hover {
+    background: rgb(13, 111, 13);
+    box-shadow: 0px 0px 15px 3px rgba(18, 18, 18, 0.485);
+}
+
+#btnReject {
+    background: rgba(209, 25, 12, 0.932);
+
+}
+
+#btnReject:hover {
+    background: rgba(173, 14, 3, 0.992);
+    box-shadow: 0px 0px 15px 3px rgba(18, 18, 18, 0.485);
+}
+
+
+#alertplease1 {
+
+    color: rgb(218, 218, 218);
+    font-weight: 300;
+    margin-top: -64px;
+    text-align: center;
+    display: none;
+}
+
+#alertplease2 {
+    color: red;
+    margin-top: 20px;
+    display: none;
+    position: relative;
+    text-align: center;
+    height: 30px;
+
+
+
+}
+
+#alertsuccess {
+    position: absolute;
+    height: 130px;
+    width: 300px;
+    background-color: rgba(242, 242, 242, 0.97);
+    border-radius: 12px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+    font-size: 20px;
+    box-shadow: 0px 0px 15px 3px rgba(18, 18, 18, 0.485);
+    backdrop-filter: blur(10px);
+    display: none;
+    bottom: 35%;
+    transition: bottom 0.5s ease-in-out;
+    opacity: 0;
+    z-index: 999;
+}
+
+#alertsuccess p {
+    display: flex;
+    padding-left: 60px;
+    justify-content: space-around;
+
+}
+
+#okaybtn {
+    margin-top: 20px;
+    width: 140px;
+    height: 50px;
+    border-radius: 30px;
+    border: 0;
+    background: rgb(18, 180, 83);
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+}
+
+#okaybtn:hover {
+    background: rgb(2, 145, 54);
+}
+
+
+#updatedAlert {
+    position: absolute;
+    height: 130px;
+    width: 300px;
+    background-color: rgba(242, 242, 242, 0.97);
+    border-radius: 12px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+    font-size: 20px;
+    box-shadow: 0px 0px 15px 3px rgba(18, 18, 18, 0.485);
+    backdrop-filter: blur(10px);
+    display: none;
+    bottom: 35%;
+    transition: bottom 0.5s ease-in-out;
+    opacity: 0;
+    z-index: 999;
+}
+
+#updatedAlert p {
+    display: flex;
+    padding-left: 60px;
+    justify-content: space-around;
+
+}
+
+#updatesuccessbtn {
+    margin-top: 20px;
+    width: 140px;
+    height: 50px;
+    border-radius: 30px;
+    border: 0;
+    background: rgb(18, 180, 83);
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+}
+
+#updatesuccessbtn:hover {
+    background: rgb(2, 145, 54);
+}
+
+
+
+
+#thereIsnoNoteAlert {
+    position: absolute;
+    height: 140px;
+    width: 300px;
+    background-color: rgba(242, 242, 242, 0.97);
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 20px;
+    box-shadow: 0px 0px 15px 3px rgba(18, 18, 18, 0.485);
+    backdrop-filter: blur(10px);
+    display: none;
+    bottom: 35%;
+    transition: bottom 0.5s ease-in-out;
+    opacity: 0;
+    z-index: 999;
+}
+
+#thereIsnoNoteAlert p {
+    display: flex;
+
+    text-align: center;
+
+}
+
+#notenull {
+    margin-top: 20px;
+    width: 140px;
+    height: 50px;
+    border-radius: 30px;
+    border: 0;
+    background: rgb(10, 88, 206);
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+}
+
+#notenull:hover {
+    background: rgb(2, 59, 145);
+}
+
+/* SEÇİLEN NOTU GÖRÜNTÜLEME EKRANI */
+
+#shownotediv {
+    width: 700px;
+    height: 560px;
+    background-color: rgba(47, 47, 47, 0.864);
+    display: none;
+    border-radius: 12px;
+    box-shadow: 0px 0px 30px 3px rgba(175, 175, 175, 0.673);
+    animation: buyumeAnimasyonu 0.3s ease-out;
+
+    overflow: hidden;
+
+}
+
+#tittleShow {
+    width: 100%;
+    height: 160px;
+    background-image: linear-gradient(45deg, rgb(50, 99, 204), rgba(0, 81, 168, 0.938));
+    margin-top: 0px;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 12px 12px 0 0;
+    color: #fff;
+}
+
+#currentlyTittle {
+    font-size: 24px;
+    border-left: 2px solid rgb(255, 252, 252);
+    padding-left: 20px;
+    margin-top: 30px;
+
+
+}
+
+#icondate1 {
+    font-size: 25px;
+}
+
+#currentlyDate {
+    display: flex;
+}
+
+#currentlyNote {
+    width: 100%;
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    overflow: auto;
+    font-weight: 300;
+    resize: none;
+
+}
+
+#currentlyTextarea {
+    padding: 10px;
+}
+
+
+#NoteClose {
+    color: rgb(255, 255, 255);
+    border: 0;
+    background-color: rgb(239, 118, 24);
+    height: 50px;
+    cursor: pointer;
+    border-radius: 0 0 11px 11px;
+    font-size: 17px;
+    font-weight: 200;
+    transition: 0.4s all ease;
+}
+
+#NoteClose:hover {
+    background-color: rgba(248, 55, 7, 0.997);
+}
+
+
+/* NOTLARI EDİTLEME PANELİ */
+
+.note-edit-Section {
+
+    grid-template-rows: 20% 6% 54% 6% 14%;
+    width: 600px;
+    height: 600px;
+    gap: 0;
+    margin: 10px;
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: 0px 0px 30px 3px rgba(175, 175, 175, 0.673);
+    display: none;
+    animation: buyumeAnimasyonu 0.5s ease-out;
+}
+
+
+
+#part1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    background-image: linear-gradient(225deg, #e36e1b 0%, #ff9411 50%, #e07c11 100%);
+    border-radius: 12px 12px 0 0;
+
+}
+
+#part1 input {
+    width: 86%;
+    height: 40%;
+    border: 0;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 18px;
+
+}
+
+#part1 input:focus {
+    outline: none;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(36, 36, 36, 0.899);
+
+}
+
+#part1 h2 {
+    font-size: 33px;
+    color: #ffffff;
+}
+
+#part2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eaeaea;
+    font-size: 17px;
+    background-image: linear-gradient(225deg, #004992 0%, #2a78c5 50%, #086ccf 100%);
+    border-bottom: 5px solid rgb(90, 90, 90);
+    height: 23px;
+}
+
+#part3 {
+    padding: 10px;
+
+
+}
+
+#part3 textarea {
+    height: 96%;
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 3px;
+    font-size: 18px;
+
+}
+
+#part3 input:focus {
+    outline: none;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(36, 36, 36, 0.899);
+}
+
+#part4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d60707;
+    font-size: 20px;
+
+}
+
+#part5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+#part5 button {
+    width: 200px;
+    height: 60px;
+    border-radius: 30px;
+    border: 0;
+    font-size: 24px;
+    cursor: pointer;
+
+}
+
+#saveNewNote {
+    color: #fff;
+    background-image: linear-gradient(45deg, rgb(34, 212, 100), rgba(1, 146, 30, 0.89));
+
+}
+
+#cancelNewNote {
+    color: #ffffff;
+    background-image: linear-gradient(45deg, rgba(243, 52, 52, 0.922), rgb(212, 28, 28));
+
+}
+
+#saveNewNote:hover {
+
+    background-image: linear-gradient(45deg, rgb(2, 155, 58), rgba(0, 100, 20, 0.89));
+
+}
+
+#cancelNewNote:hover {
+
+    background-image: linear-gradient(45deg, rgba(214, 10, 10, 0.922), rgb(141, 3, 3));
+
+}
+
+
+#pleaseUpdateTittleAlert {
+    display: none;
+}
+
+#pleaseUpdateTextAreaAlert {
+    display: none;
+}
+
+
+/* ek özellikler */
+
+#creator{
+   font-size: 10px; 
+   position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #5a5a5a44;
+    width: 100%;
+    text-align: center;
+    display: none;
+
+}
+
+
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 48, 48, 0.422);
+    z-index: 998;
+}
+
+
+/* Media sorguları */
+
+
+
+
+@media screen and (min-width: 500px) and (max-width: 700px) {
+
+
+
+    body {
+        margin-top: 160px;
+        margin-bottom: 160px;
+    }
+
+
+    .section {
+        width: 98%;
+        height: 1300px;
+        margin: 200px auto;
+
+        border-radius: 12px;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid rgb(32, 32, 32);
+
+    }
+
+
+    #addbutton {
+        opacity: 1;
+        display: flex;
+        margin-bottom: -60px;
+    }
+
+    #clearbutton {
+        opacity: 1;
+        display: flex;
+
+    }
+
+    #showlistbutton {
+        display: none;
+    }
+
+    #appname {
+        display: none;
+    }
+
+    .menu {
+        height: 300px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        display: flex;
+        opacity: 1;
+        border-bottom: 4px solid rgb(172, 172, 172);
+        border-radius: 10px 10px 0 0;
+
+
+    }
+
+    .btnstyle {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .menulist {
+        width: 100%;
+        height: 500px;
+        overflow: auto;
+        justify-content: center;
+        opacity: 1;
+
+
+    }
+
+
+    .newnotepannel {
+        width: 98%;
+        height: 520px;
+        background-color: rgb(56, 56, 56);
+        border-radius: 10px;
+        box-shadow: 0px 0px 30px 3px rgba(175, 175, 175, 0.673);
+        display: none;
+        animation: buyumeAnimasyonu 0.5s ease-out;
+        background-color: #ffffff;
+
+
+    }
+
+    .contentbar {
+        width: 100%;
+        height: 200px;
+    }
+
+    .contentbar .notearea {
+        width: 100%;
+
+    }
+
+    .note-edit-Section {
+        width: 98%;
+    }
+
+    #infodiv1 {
+        width: 96%;
+    }
+
+    #shownotediv {
+        width: 97%;
+    }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+
+
+
+    body {
+        margin-top: 50px;
+        margin-bottom: 250px;
+    }
+
+
+    .section {
+        width: 90%;
+        height: 1300px;
+        margin: 200px auto;
+
+        border-radius: 12px;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid rgb(32, 32, 32);
+
+    }
+
+
+    #addbutton {
+        opacity: 1;
+        display: flex;
+        margin-bottom: -60px;
+    }
+
+    #clearbutton {
+        opacity: 1;
+        display: flex;
+
+    }
+
+    #showlistbutton {
+        display: none;
+    }
+
+    #appname {
+        display: none;
+    }
+
+    .menu {
+        height: 300px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        display: flex;
+        opacity: 1;
+        border-bottom: 4px solid rgb(180, 180, 180);
+        border-radius: 10px 10px 0 0;
+
+
+    }
+
+    .btnstyle {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .menulist {
+        width: 100%;
+        height: 500px;
+        overflow: auto;
+        justify-content: center;
+        opacity: 1;
+
+
+    }
+
+
+
+    .newnotepannel {
+        width: 97%;
+        height: 700px;
+
+
+    }
+
+
+    .custom-textarea {
+        width: 100%;
+        height: 100%;
+        resize: none;
+        font-size: 18px;
+        border: none;
+        padding: 10px;
+        margin-top: 10px;
+        color: #363636;
+        box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(162, 162, 162, 0.884);
+        border-radius: 4px;
+        background-color: #f5f5f5;
+    
+
+    
+    }
+   
+
+    .contentbar {
+        width: 100%;
+        height: auto;
+        margin: 0px auto;
+    }
+
+    .contentbar {
+        width: 100%;
+        height: 320px;
+        background: transparent;
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+        margin-top: -30px;
+        position: "";
+        
+    
+    
+    }
+
+
+    .bar {
+        width: 100%;
+    }
+
+    #enterTittle {
+        width: 260px;
+    }
+
+    .btnProperties {
+        font-size: 20px;
+        width: 130px;
+    }
+
+
+    .note-edit-Section {
+        width: 98%;
+    }
+
+    #infodiv1 {
+        width: 96%;
+        font-size: 3px;
+    }
+
+    #infodiv1 h1 {
+
+        font-size: 15px;
+    }
+
+    .infobtn1 {
+        width: 120px;
+        font-size: 17px;
+
+    }
+
+    #shownotediv {
+        width: 97%;
+
+    }
+
+    #part3 {
+        width: 100%;
+    }
+
+    #updateTextArea {
+        width: 100%;
+    }
+
+    #saveNewNote {
+
+        font-size: 12px;
+    }
+
+    #part5 button {
+        font-size: 15px;
+        width: 130px;
+    }
+
+
+    .note {
+        width: 96%;
+        height: 120px;
+        border-left: 10px solid rgba(7, 111, 207, 0.912);
+        border-right: 2px solid rgba(39, 39, 39, 0.721);
+        border-top: 2px solid rgba(39, 39, 39, 0.721);
+        border-bottom: 2px solid rgba(39, 39, 39, 0.721);
+        display: grid;
+        grid-template-columns: 24% 56% 20%;
+        margin-left: 1%;
+        margin-top: 20px;
+        border-radius: 7px;
+        transition: 0.3s all ease;
+    }
+
+
+    .note:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 21px 3px rgba(0, 0, 0, 0.474);
+        transform: translateY(-6px);
+
+
+    }
+
+
+    .item1 {
+
+        border-right: 1px solid black;
+        display: flex;
+        margin-left: 6px;
+        margin-right: 2px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+
+
+    }
+
+
+    .contenttittle {
+        background-color: rgb(255, 255, 255);
+        width: 86%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0px;
+
+    }
+
+
+    .item2 {
+
+        font-weight: bold;
+        color: #303030;
+        font-size: 20px;
+
+    }
+
+    .item3 {
+
+        display: flex;
+        align-items: center;
+    }
+
+
+    .noteicons {
+
+        height: 30%;
+        width: 60%;
+
+        justify-content: center;
+        display: flex;
+        padding: 0 10px;
+
+    }
+
+    .notebtns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 8px;
+        border: 0;
+        background-color: #e7e7e7d4;
+        cursor: pointer;
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+        margin-left: 5px;
+        transition: 0.3s all ease-in-out;
+    }
+
+    #noteupdate-icon {
+        font-size: 30px;
+        color: rgba(241, 145, 0, 0.966);
+        margin-right: 7px;
+    }
+
+    #notedelete-icon {
+        font-size: 30px;
+        color: rgb(255, 0, 0);
+        margin-right: 7px;
+    }
+
+    .notebtns:hover {
+        background-color: #212121e1;
+    }
+
+
+    .notetittlecontent {
+        text-align: center;
+    }
+
+    #notetittle {
+        padding-left: 10px;
+        overflow: hidden;
+        font-size: 14px;
+
+    }
+
+
+    .menulist {
+        background-size: 370px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    #creator{
+        display: block;
+    }
+}
