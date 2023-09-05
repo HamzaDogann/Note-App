@@ -2,7 +2,9 @@
 
 Note Application 
 
-Merhabalar, Bu bir not uygulamasıdır. Html - Css - JavaScript ile oluşturduğum pratik ve deneyim kazanma amaçlı yaptığım bir proje.
+Merhabalar,
+
+ Bu bir not uygulamasıdır. Html - Css - JavaScript ile oluşturduğum pratik ve deneyim kazanma amaçlı yaptığım bir proje.
 Bu projenin bana kazandırdıkları;
 
 - Temiz Html ve Css ve JavaScript kod yazımı
@@ -52,6 +54,14 @@ Example Photos / Örnek Resimler
 ![NoteAppPng5](https://github.com/HamzaDogann/Note-Application/assets/93007915/6e2e3b4f-3bdf-4478-9fbe-48ccabd8e924)
 
 ![NoteAppPng6](https://github.com/HamzaDogann/Note-Application/assets/93007915/daace8a8-d3b5-4afe-8e10-a1aaca3a6b8d)
+
+![NoteAppPng7](https://github.com/HamzaDogann/Note-Application/assets/93007915/0f03a331-899e-43a0-9664-771921575a8f)
+
+
+Deploy Site = https://noteapplication-hd.netlify.app/
+LinkedIn = https://www.linkedin.com/in/hamza-dogan-882721259/
+
+
 
 
 
