@@ -59,6 +59,8 @@ Example Photos / Örnek Resimler
 
 
 Deploy Site = https://noteapplication-hd.netlify.app/
+
+
 LinkedIn = https://www.linkedin.com/in/hamza-dogan-882721259/
 
 
